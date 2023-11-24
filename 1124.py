@@ -1,27 +1,30 @@
 class Course:
-    def __init__(self, course_name,course_id, course_credits):
-        self.course_name = course_name
-        self.course_id = course_id
-        self.course_credits = course_credits
-class Student:
-    def __init__(self, stu_name, stu_id):
-        self.stu_name = stu_name
-        self.stu_id = stu_id
-        
+  def __init__(self, course_name, 
+               course_id, course_credits):
+    self.course_name = course_name
+    self.course_id = course_id
+    self.course_credits = course_credits
+
     def __str__(self):
-        return f"Name: {self.stu_name}\nID = {self.stu_id}"
+      return f"Course Name: {self.course_name}\nCourse ID = {self.course_id}\nCourse credits = {self.course_credits}"
 
-    
-    def addCourse(self, object):
-        self.course_info = object
+class Student:
+  def __init__(self, stu_name, stu_id):
+    self.stu_name = stu_name
+    self.stu_id = stu_id
 
-c1 = Course(course_name="套裝軟體應用",
-            course_id="G0D17M01",
+  def __str__(self):
+    return f"Name: {self.stu_name}\nID = {self.stu_id}"
+  
+  def addCourse(self, object):
+    self.course = object
+
+c1 = Course(course_name="套裝軟體應用", 
+            course_id="(G0D17M01",
             course_credits=3)
-s1 = Student(stu_name="鐘竣羽",stu_id="4B1G0015")
-
-
-
+s1 = Student(stu_name="鐘竣羽", stu_id="4B1G0015")
+s1.addCourse(c1)
+print(s1)
 
 class Person:
     def __init__(self, name_, age_):
